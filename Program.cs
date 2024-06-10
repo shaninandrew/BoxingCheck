@@ -5,7 +5,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Проверка работы с массивом через боксинг...");
+        Console.WriteLine("Проверка работы с массивом через боксинг (object[])...");
         int size = 20000000;
 
         Stopwatch sw = new Stopwatch();
@@ -24,7 +24,7 @@ internal class Program
         Console.WriteLine($"Сумма {sum} \r\n ");
 
 
-        Console.WriteLine("Проверка работы с целочисленным массивом без боксинга...");
+        Console.WriteLine("Проверка работы с целочисленным массивом без боксинга (int[])...");
         sum = 0;
         sw.Reset();
         sw.Start();
@@ -40,7 +40,7 @@ internal class Program
         Console.WriteLine($"Без коробки-style = {((double)sw.Elapsed.TotalMilliseconds / 1000).ToString("0.00")} сек");
         Console.WriteLine($"Сумма {sum} ");
 
-        Console.WriteLine("\r\n Проверка боксинга для строк...");
+        Console.WriteLine("\r\n Проверка боксинга для строк (object[])...");
         sw.Reset();
         sw.Start();
         object[] str_x = new object[size];
@@ -52,7 +52,7 @@ internal class Program
         sw.Stop();
         Console.WriteLine($"В коробке-style = {((double)sw.Elapsed.TotalMilliseconds / 1000).ToString("0.00")} сек \r\n");
 
-        Console.WriteLine("\r\n Проверка работы без боксинга для строк...");
+        Console.WriteLine("\r\n Проверка работы без боксинга для строк (string[])...");
         
         sw.Reset();
         sw.Start();
